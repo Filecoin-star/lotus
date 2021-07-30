@@ -159,6 +159,7 @@ require (
 	gopkg.in/cheggaaa/pb.v1 v1.0.28
 	gotest.tools v2.2.0+incompatible
 	honnef.co/go/tools v0.0.1-2020.1.3 // indirect
+	github.com/moran666666/sector-counter v0.0.0-20200819122504-6672fe8fb056
 )
 
 replace github.com/libp2p/go-libp2p-yamux => github.com/libp2p/go-libp2p-yamux v0.5.1
@@ -168,3 +169,5 @@ replace github.com/filecoin-project/lotus => ./
 replace github.com/filecoin-project/filecoin-ffi => ./extern/filecoin-ffi
 
 replace github.com/filecoin-project/test-vectors => ./extern/test-vectors
+
+replace github.com/moran666666/sector-counter => ./extern/sector-counter

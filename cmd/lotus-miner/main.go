@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
+	"os"
 
 	"github.com/fatih/color"
 	cliutil "github.com/filecoin-project/lotus/cli/util"
@@ -113,6 +114,8 @@ func main() {
 	}
 	app.Setup()
 	app.Metadata["repoType"] = repo.StorageMiner
+	os.Setenv("LOTUS_WDPOST", "true")
+	os.Setenv("LOTUS_WNPOST", "true")
 
 	lcli.RunApp(app)
 }
