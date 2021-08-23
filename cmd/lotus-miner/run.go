@@ -262,18 +262,18 @@ var runCmd = &cli.Command{
 
 		if cctx.Bool("p2p") {
 			if bootstrapLibP2P {
-			log.Infof("Bootstrapping libp2p network with full node")
+				log.Infof("Bootstrapping libp2p network with full node")
 
-			// Bootstrap with full node
-			remoteAddrs, err := nodeApi.NetAddrsListen(ctx)
-			if err != nil {
-				return xerrors.Errorf("getting full node libp2p address: %w", err)
-			}
+				// Bootstrap with full node
+				remoteAddrs, err := nodeApi.NetAddrsListen(ctx)
+				if err != nil {
+					return xerrors.Errorf("getting full node libp2p address: %w", err)
+				}
 
-			if err := minerapi.NetConnect(ctx, remoteAddrs); err != nil {
-				return xerrors.Errorf("connecting to full node (libp2p): %w", err)
+				if err := minerapi.NetConnect(ctx, remoteAddrs); err != nil {
+					return xerrors.Errorf("connecting to full node (libp2p): %w", err)
+				}
 			}
-		}
 		} else {
 			log.Warn("This miner will be disable p2p.")
 		}
